@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 
   listener = socket(AF_INET, SOCK_STREAM, 0);
   if (listener < 0) {
-      perror("socket");
+      perror("Socket error");
       exit(1);
   }
 
@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
   addr.sin_addr.s_addr = htonl(INADDR_ANY);
 
   if (bind(listener, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
-      perror("bind");
+      perror("Binding error");
       exit(2);
   }
 
@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
       sf = (struct sockFile*) malloc (sizeof(struct sockFile));
 
       if(sock < 0) {
-          perror("accept");
+          perror("Acception error");
           exit(3);
       }
       bytes_read = recv(sock, filename, 1024, 0);
