@@ -64,6 +64,8 @@ int main(int argc, char *argv[]) {
   }
 
   listen(listener, 1);
+  
+  printf("Server started.");
 
   while (1) {
       int pid;
