@@ -87,13 +87,4 @@ int main(int argc, char *argv[]) {
       if (argv[1] == "t") {
 	rc = pthread_create(&thread_id, NULL, ThreadFunc, (void*)&sf[0]);
       	if (rc)
-            printf("Can't create thread!");
-      }
-      else {
-	pid = fork();
-        if (pid == 0) ThreadFunc((void*)&sf[0]);
-      }
-  }
-  return 0;
-}
-
+            pri
